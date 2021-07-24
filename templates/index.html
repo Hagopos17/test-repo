@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <p class="main-title">Enter Name</p>
+        <form class="pure-form" method="post" action="/" autocomplete="off">
+            Name:<br>
+            <input type="text" name="username" required>
+            <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        {% if entered_name %}
+            <p> Welcome {{entered_name}}, to the website!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
